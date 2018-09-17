@@ -15,14 +15,6 @@ void setup() {
 
 void loop() {
    delay(1000);
-   elapsed_time = (micros() - start_time) * 1000000;
-   Serial.print((float)n1/elapsed_time);
-   Serial.print(" ");
-   Serial.print((float)n2/elapsed_time);
-   Serial.print("\n");
-   n1 = 0;
-   n2 = 0;
-   start_time = micros();
 
    now = micros();
    div = (now - timestamp) * 1000000;
