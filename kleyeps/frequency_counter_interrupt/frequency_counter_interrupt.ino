@@ -17,11 +17,11 @@ void loop() {
    delay(1000);
 
    now = micros();
-   div = (now - timestamp) * 1000000;
+   diff = (now - timestamp) * 1000000;
    
-   Serial.print((float)n1/div);
+   Serial.print((float)n1/diff);
    Serial.print(" ");
-   Serial.println((float)n2/div);
+   Serial.println((float)n2/diff);
 
    n1 = 0;
    n2 = 0;
