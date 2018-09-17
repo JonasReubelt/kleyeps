@@ -2,7 +2,7 @@ const byte interruptPin1 = 2;
 const byte interruptPin2 = 3;
 long int n1 = 0;
 long int n2 = 0;
-long int time1;
+long int start_time, elapsed_time;
 
 void setup() {
   Serial.begin(9600);
@@ -14,14 +14,14 @@ void setup() {
 
 void loop() {
    delay(1000);
-   
-   Serial.print((float)n1/(micros()-time1)*1000000);
+   elapsed_time = (micros() - start_time) * 1000000;
+   Serial.print((float)n1/elapsed_time);
    Serial.print(" ");
-   Serial.print((float)n2/(micros()-time1)*1000000);
+   Serial.print((float)n2/elapsed_time);
    Serial.print("\n");
    n1 = 0;
    n2 = 0;
-   time1 = micros();
+   start_time = micros();
 }
 
 void increase1() {
