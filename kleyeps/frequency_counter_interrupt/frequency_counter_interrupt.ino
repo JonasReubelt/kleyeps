@@ -4,6 +4,7 @@ long int n1 = 0;
 long int n2 = 0;
 long int timestamp;
 long int now;
+long int diff;
 
 void setup() {
   Serial.begin(9600);
