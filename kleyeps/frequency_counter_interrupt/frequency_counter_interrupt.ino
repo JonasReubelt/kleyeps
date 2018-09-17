@@ -2,7 +2,8 @@ const byte interruptPin1 = 2;
 const byte interruptPin2 = 3;
 long int n1 = 0;
 long int n2 = 0;
-long int start_time, elapsed_time;
+long int timestamp;
+long int now;
 
 void setup() {
   Serial.begin(9600);
@@ -22,6 +23,17 @@ void loop() {
    n1 = 0;
    n2 = 0;
    start_time = micros();
+
+   now = micros();
+   div = (now - timestamp) * 1000000;
+   
+   Serial.print((float)n1/div);
+   Serial.print(" ");
+   Serial.println((float)n2/div);
+
+   n1 = 0;
+   n2 = 0;
+   timestamp = now;
 }
 
 void increase1() {
